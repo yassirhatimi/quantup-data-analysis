@@ -1,0 +1,28 @@
+{
+  "_comment": [
+    "Manually pinned high-impact events for the probability engine.",
+    "",
+    "FRED has no usable forward calendar for central-bank decisions: release 101",
+    "(FOMC) returns an entry for every single calendar day, which carries no",
+    "schedule information at all, and the ECB and Bank of England are not carried",
+    "as dated FRED releases. Rather than guess those dates, the engine reports",
+    "them as NOT TRACKED and reads anything you pin here.",
+    "",
+    "Add entries from the central banks' own published calendars:",
+    "  Fed  https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "  ECB  https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+    "  BoE  https://www.bankofengland.co.uk/monetary-policy/upcoming-mpc-dates",
+    "",
+    "when_utc must be the statement time in UTC. impact is HIGH or medium.",
+    "affects lists the asset codes the event moves; omit it to mean all three.",
+    "An event inside a horizon widens that horizon's distribution and cuts its",
+    "confidence, so a wrong date will visibly distort the output - check them."
+  ],
+  "_example": {
+    "when_utc": "2026-09-16 18:00",
+    "name": "FOMC rate decision",
+    "impact": "HIGH",
+    "affects": ["XAUUSD", "EURUSD", "GBPUSD"]
+  },
+  "events": []
+}

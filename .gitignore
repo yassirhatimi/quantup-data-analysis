@@ -1,0 +1,51 @@
+# Secrets — never commit API keys
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data dumps / caches
+/data/
+.review-build/
+.env.*
+!.env.example
+*.parquet
+*.csv
+
+# Scheduled-run logs
+dashboard/logs/
+dashboard/gold_watch/logs/
+dashboard/gold_watch/state/
+dashboard/fx_watch/logs/
+dashboard/fx_watch/state/
+
+# Live probability engine: machine state, run history and the prediction
+# database (data/ is already ignored above, but be explicit — this one holds
+# the model's track record and would otherwise churn every commit)
+dashboard/predict/state/
+dashboard/predict/history/
+data/predict/
+
+# Generated local research artifacts
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+**/.yf_cache/
+/dashboard/**/*.html
+/dashboard/**/*.png
+/dashboard/**/latest.*
+/dashboard/**/history/
+/dashboard/**/state/
+/dashboard/week_ahead/state.json
+/gold_wave_analysis/results*.md
+/gold_wave_analysis/analysis_summary.json
+/quickstart_equity.png
