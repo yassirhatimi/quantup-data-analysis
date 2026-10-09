@@ -599,9 +599,11 @@ def render_body(data: dict) -> str:
     strat_html = ""
     if data["strategy"]:
         s = data["strategy"]
+        long_badge = '<span class="badge on">&#9650; LONG</span>'
+        flat_badge = '<span class="badge off">FLAT</span>'
         pos_rows = "".join(
             f"<tr><td>{code}</td>"
-            f"<td>{'<span class=\"badge on\">&#9650; LONG</span>' if p['on'] else '<span class=\"badge off\">FLAT</span>'}</td>"
+            f"<td>{long_badge if p['on'] else flat_badge}</td>"
             f"<td class='num'>since {p['since']} ({p['days']}d)</td></tr>"
             for code, p in s["positions"].items()
         )
